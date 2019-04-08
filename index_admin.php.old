@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Servicio de Mantenimiento</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/skel.min.js"></script>
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>		
+	</head>
+	<body class="no-sidebar">
+		<div id="header">
+			<div class="inner">
+				<header>
+					<h1>Mantenimiento</h1>
+				</header>
+			</div>
+		</div>
+       	<br>
+    </body>
+</html>
+<div align="center">
+	<form action="validacion_admin.php" method="post">
+		Ingresa tus datos de Administrador
+		<br>
+		<br>
+		<table>
+			<tr>
+				<td align="right">Usuario:&nbsp;</td>
+				<td><input type="text" name="usuario" required  style="border-radius: 10px;"></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">Contraseña:&nbsp;</td>
+				<td><input type="password" name="contrasena" required  style="border-radius: 10px;"></td>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<td><a href="servicios.php" name="Regresarss" class="button" >Regresar</a> </td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><input type="submit" name="Entrar" class="button"></td>
+			</tr>
+		</table>		
+		<br>
+		<br>
+	</form>
+</div>
+<?php
+if (isset($_GET['error']) && $_GET['error'] == 1) {
+	echo "Usuario y/o contraseña incorrecta";
+}elseif (isset($_GET['error']) && $_GET['error'] == 2) {
+	echo "Ingrese los datos";
+}
+
+?>
+
+<?php
+include("footer.php");
+?>
